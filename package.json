@@ -1,0 +1,28 @@
+{
+  "name": "elite-website",
+  "version": "1.0.0",
+  "description": "Elite Website",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "dev": "ts-node-dev --respawn --transpileOnly --clear --no-notify ./src/app.ts",
+    "prod": "tsc && node ./build/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IronicPickle/elite-website.git"
+  },
+  "author": "IronicPickle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IronicPickle/elite-website/issues"
+  },
+  "homepage": "https://github.com/IronicPickle/elite-website#readme",
+  "dependencies": {
+    "bluebird": "^3.7.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.3",
+    "ts-node-dev": "^1.0.0-pre.43",
+    "typescript": "^3.6.3"
+  }
+}
