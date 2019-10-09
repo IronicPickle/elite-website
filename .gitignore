@@ -8,10 +8,13 @@ config/
 # Dependency directories
 node_modules/
 
+# Environment variables
+.env
+
 # TypeScript v1 declaration files
 typings/
 
 package-lock.json
 
-// Build directory
+# Build directory
 build/

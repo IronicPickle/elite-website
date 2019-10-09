@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "dev": "ts-node-dev --respawn --transpileOnly --clear --no-notify ./src/app.ts",
+    "dev": "nodemon -w src -e .ts -x \"tsc && node ./build/app.js\"",
     "prod": "tsc && node ./build/app.js"
   },
   "repository": {
@@ -20,9 +20,15 @@
   "homepage": "https://github.com/IronicPickle/elite-website#readme",
   "dependencies": {
     "bluebird": "^3.7.0",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "mongoose": "^5.7.3",
-    "ts-node-dev": "^1.0.0-pre.43",
     "typescript": "^3.6.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^4.17.1",
+    "@types/node": "^12.7.12",
+    "nodemon": "^1.19.3"
   }
 }
