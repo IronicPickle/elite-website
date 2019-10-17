@@ -5,11 +5,12 @@
   "main": "./build/app.js",
   "scripts": {
     "clean": "echo Clearing current build... && rm -rf ./build",
-    "compile": "echo Compiling TypeScript... && tsc --build ./tsconfig.server.json",
-    "build": "echo Creating Next.js build... && next build ./build",
-    "prepare": "npm run clean && npm run compile && npm run build",
+    "compile:typescript": "echo Compiling TypeScript... && tsc --build ./tsconfig.server.json",
+    "build:next": "echo Creating Next.js build... && next build ./build",
+    "build": "npm run clean && npm run compile:typescript && npm run build:next",
+    "prepare": "echo Preparing build... && npm run build",
     "dev": "nodemon",
-    "prod": "clear && npm run prepare && clear && cross-env NODE_ENV=production node ./build/app.js"
+    "prod": "clear && cross-env NODE_ENV=production node ./build/app.js"
   },
   "repository": {
     "type": "git",
