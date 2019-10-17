@@ -35,13 +35,14 @@
     "typescript": "^3.6.4"
   },
   "devDependencies": {
+    "@material-ui/types": "^4.1.1",
     "@types/dotenv": "^6.1.1",
     "@types/express": "^4.17.1",
     "@types/next": "^8.0.6",
     "@types/node": "^12.11.1",
     "@types/react": "^16.9.9",
     "@types/react-dom": "^16.9.2",
-    "ts-node-dev": "^1.0.0-pre.43"
+    "nodemon": "^1.19.4"
   },
   "nodemonConfig": {
     "ignore": [
