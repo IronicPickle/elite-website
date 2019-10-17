@@ -8,7 +8,7 @@
     "compile:typescript": "echo Compiling TypeScript... && tsc --build",
     "build:react": "echo Building react application... && npm run build --prefix ./client",
     "build": "npm run clean && npm run compile:typescript && npm run build:react",
-    "prepare": "echo Preparing build... && npm run build",
+    "prepare": "cd ./client && npm install && cd .. && echo Preparing build... && npm run build",
     "dev": "concurrently --names Server,Client \"nodemon\" \"npm run start --prefix ./client\"",
     "prod": "clear && cross-env NODE_ENV=production node ./build/app.js"
   },
