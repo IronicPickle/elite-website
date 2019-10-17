@@ -3,6 +3,9 @@ import bodyParser from "body-parser";
 import next from "next";
 import path from "path";
 import { Express } from "express-serve-static-core";
+import Server from "next/dist/next-server/server/next-server";
+import { IncomingMessage, ServerResponse } from "http";
+import { UrlWithParsedQuery } from "url";
 
 export class NodeServer {
 
@@ -11,9 +14,9 @@ export class NodeServer {
   private dev: boolean;
   private dir: string;
 
-  private app: any;
+  private app: Server;
   private server: Express;
-  private handle: any;
+  private handle: (req: IncomingMessage, res: ServerResponse, parsedUrl?: UrlWithParsedQuery | undefined) => Promise<void>;
 
   constructor() {
     this.port = process.env.PORT || "8080";
@@ -46,6 +49,7 @@ export class NodeServer {
           if(this.dev) console.log(req.method, req.url, "from", req.ip);
           this.handle(req, res);
         });
+        
       }).catch((ex: { stack: any; }) => {
         console.error(ex.stack);
         process.exit(1);
