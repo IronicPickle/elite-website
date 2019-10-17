@@ -11,10 +11,8 @@ node_modules/
 # Environment variables
 .env
 
-# TypeScript v1 declaration files
-typings/
-
 package-lock.json
+.next
 
 # Build directory
 build/
