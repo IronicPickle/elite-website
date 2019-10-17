@@ -16,7 +16,7 @@ export class NodeServer {
   private handle: any;
 
   constructor() {
-    this.port = process.env.PORT;
+    this.port = process.env.PORT || "8080";
     this.environment = process.env.NODE_ENV; // Node Environment
     this.dev = this.environment !== "production";
     this.dir = (this.dev) ? "./" : "./build";
