@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import path from "path";
 import { Express } from "express-serve-static-core";
+import routes from "./routes";
 
 export class NodeServer {
   public port: string;
@@ -32,6 +33,8 @@ export class NodeServer {
       server.listen(port, () => {
         resolve(this);
       });
+      
+      server.use("/api", routes.api);
 
       server.all("*", (req: any, res: any, next: any) => {
         if(this.dev) console.log(req.method, req.url, "from", req.ip);
